@@ -155,14 +155,22 @@ export function AdminSidebar() {
     );
 
   return (
-    <Sidebar className={cn("border-r border-sidebar-border", collapsed ? "w-16" : "w-72")}>
-      <div className="flex items-center justify-between p-4 border-b border-sidebar-border">
+    <Sidebar className={cn(
+      "border-r border-sidebar-border/50 bg-gradient-to-b from-sidebar-background to-sidebar-background/90 backdrop-blur-xl", 
+      collapsed ? "w-16" : "w-72"
+    )}>
+      <div className="flex items-center justify-between p-4 border-b border-sidebar-border/50 bg-sidebar-background/50">
         {!collapsed && (
-          <h2 className="text-lg font-semibold text-sidebar-accent-foreground">
-            Admin Panel
-          </h2>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-sidebar-primary to-sidebar-primary/80 flex items-center justify-center">
+              <span className="text-sidebar-primary-foreground font-bold text-sm">A</span>
+            </div>
+            <h2 className="text-lg font-semibold text-sidebar-accent-foreground">
+              Admin Panel
+            </h2>
+          </div>
         )}
-        <SidebarTrigger className="text-sidebar-foreground hover:text-sidebar-accent-foreground" />
+        <SidebarTrigger className="text-sidebar-foreground hover:text-sidebar-accent-foreground hover:bg-sidebar-accent/50 transition-all duration-200" />
       </div>
 
       <SidebarContent className="px-3 py-4">

@@ -7,6 +7,7 @@ import { AdminLayout } from "./components/layout/AdminLayout";
 import Dashboard from "./pages/Dashboard";
 import Users from "./pages/Users";
 import Exceptions from "./pages/Exceptions";
+import SystemConfig from "./pages/SystemConfig";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,7 +30,7 @@ const App = () => (
             <Route path="/analytics" element={<Dashboard />} />
             <Route path="/system/menus" element={<Dashboard />} />
             <Route path="/system/permissions" element={<Dashboard />} />
-            <Route path="/system/config" element={<Dashboard />} />
+            <Route path="/system/config" element={<SystemConfig />} />
             <Route path="/communications/notifications" element={<Dashboard />} />
             <Route path="/communications/templates" element={<Dashboard />} />
             <Route path="/communications/languages" element={<Dashboard />} />
